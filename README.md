@@ -1,6 +1,6 @@
 # Awoo
 
-A textboard image inspired by danger/u/ from the video game
+A textboard engine inspired by danger/u/ from the video game
 VA-11 HALL-A: Cyberpunk Bartender Action.
 
 ## Requirements
