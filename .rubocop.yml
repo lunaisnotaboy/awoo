@@ -1,0 +1,33 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+inherit_mode:
+  merge:
+    - Exclude
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.0
+
+Layout/LineLength:
+  Enabled: false
+
+Lint/MissingSuper:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/**/*.rb
+    - db/migrate/**/*.rb
+    - lib/tasks/**/*.rake
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/**/*.rb
+
+Style/Documentation:
+  Enabled: false

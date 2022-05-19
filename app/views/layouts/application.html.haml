@@ -1,0 +1,24 @@
+!!! 5
+%html{lang: I18n.locale}
+  %head
+    %meta{charset: 'utf-8'}/
+    %meta{content: 'width=device-width,initial-scale=1', name: 'viewport'}/
+
+    / Load the CSRF and CSP tags
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    / Show site generator and current Git revision
+    %meta{content: "lunaisnotaboy/awoo @ #{current_revision}", name: 'generator'}/
+
+    / Set the page title and description
+    %title Awoo
+    %meta{content: 'danger/u/ - dangerous opinions. danger/u/ is a textboard based off danger/u/ from VA-11 HALL-A Cyberpunk Bartender Action.', name: 'description'}/
+
+    / Load the main stylesheet
+    = stylesheet_link_tag 'application', media: 'all'
+
+  %body
+    = yield
+
+    = render partial: 'layouts/footer'
