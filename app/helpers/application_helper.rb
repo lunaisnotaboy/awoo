@@ -10,18 +10,10 @@ module ApplicationHelper
   end
 
   def page_description(description = nil)
-    if description
-      description
-    else
-      'danger/u/ - dangerous opinions. danger/u/ is a textboard based off danger/u/ from the video game VA-11 HALL-A: Cyberpunk Bartender Action.'
-    end
+    description || 'danger/u/ - dangerous opinions. danger/u/ is a textboard based off danger/u/ from the video game VA-11 HALL-A: Cyberpunk Bartender Action.'
   end
 
   def page_title(title = nil)
-    if title
-      title
-    else
-      'danger/u/'
-    end
+    title || 'danger/u/'
   end
 end

@@ -12,14 +12,14 @@ module BoardHelper
     'osaka.png',
     'papi_banner.png',
     'why.jpg'
-  ]
+  ].freeze
 
   BURG_BANNERS = [
     'angeru.png',
     'discovery.jpg',
     'logo.png',
     'popup.png'
-  ]
+  ].freeze
 
   CYB_BANNERS = [
     '2.gif',
@@ -31,7 +31,7 @@ module BoardHelper
     'logo.gif',
     'refugee.png',
     'waifus.gif'
-  ]
+  ].freeze
 
   D_BANNERS = [
     'c.png',
@@ -42,14 +42,14 @@ module BoardHelper
     'gay.png',
     'logo.gif',
     'what.png'
-  ]
+  ].freeze
 
   LAIN_BANNERS = [
     'grey.png',
     'stare.png',
     'terminal.png',
     'wires.png'
-  ]
+  ].freeze
 
   MU_BANNERS = [
     'animu.jpg',
@@ -62,7 +62,7 @@ module BoardHelper
     'reimu.png',
     'trumpet.png',
     'violin.png'
-  ]
+  ].freeze
 
   NEW_BANNERS = [
     'actual_political_discussion.png',
@@ -72,7 +72,7 @@ module BoardHelper
     'rhythm_heaven.png',
     'speech.png',
     'tumbleweed.png'
-  ]
+  ].freeze
 
   TECH_BANNERS = [
     '1.gif',
@@ -83,7 +83,7 @@ module BoardHelper
     'lain.png',
     'logo.gif',
     'petya.png'
-  ]
+  ].freeze
 
   U_BANNERS = [
     '1.gif',
@@ -101,7 +101,7 @@ module BoardHelper
     'safe2.png',
     'vandals.png',
     'welcome_back_jill.png'
-  ]
+  ].freeze
 
   V_BANNERS = [
     'burg.png',
@@ -114,7 +114,7 @@ module BoardHelper
     'ps4.png',
     'suguri.png',
     'yume_nikki.png'
-  ]
+  ].freeze
 
   def banner(board)
     case board
@@ -145,10 +145,9 @@ module BoardHelper
 
     banner = banner.sample
     if not_found
-      banner = asset_url("logo.png")
+      asset_url('logo.png')
     else
-      banner = asset_url("banners/#{board}/#{banner}")
+      asset_url("banners/#{board}/#{banner}")
     end
-    banner
   end
 end

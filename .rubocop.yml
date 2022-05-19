@@ -25,9 +25,17 @@ Metrics/BlockLength:
     - db/migrate/**/*.rb
     - lib/tasks/**/*.rake
 
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
 Metrics/MethodLength:
   Exclude:
+    - app/helpers/**/*.rb
     - db/migrate/**/*.rb
+
+Metrics/ModuleLength:
+  Exclude:
+    - app/helpers/**/*.rb
 
 Style/Documentation:
   Enabled: false
