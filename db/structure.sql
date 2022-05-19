@@ -26,30 +26,24 @@ CREATE TABLE public.ar_internal_metadata (
 
 
 --
--- Name: posts; Type: TABLE; Schema: public; Owner: -
+-- Name: boards; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE public.posts (
+CREATE TABLE public.boards (
     id bigint NOT NULL,
-    board character varying DEFAULT ''::character varying NOT NULL,
-    title character varying,
-    content text DEFAULT ''::text NOT NULL,
-    ip character varying DEFAULT ''::character varying NOT NULL,
-    locked boolean DEFAULT false NOT NULL,
-    sticky boolean DEFAULT false NOT NULL,
-    janitor character varying DEFAULT ''::character varying NOT NULL,
-    last_bumped timestamp(6) without time zone,
-    parent integer,
+    name character varying DEFAULT ''::character varying NOT NULL,
+    "desc" character varying DEFAULT ''::character varying NOT NULL,
+    rules text DEFAULT ''::text NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL
 );
 
 
 --
--- Name: posts_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: boards_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE public.posts_id_seq
+CREATE SEQUENCE public.boards_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -58,10 +52,10 @@ CREATE SEQUENCE public.posts_id_seq
 
 
 --
--- Name: posts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: boards_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE public.posts_id_seq OWNED BY public.posts.id;
+ALTER SEQUENCE public.boards_id_seq OWNED BY public.boards.id;
 
 
 --
@@ -74,10 +68,10 @@ CREATE TABLE public.schema_migrations (
 
 
 --
--- Name: posts id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: boards id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.posts ALTER COLUMN id SET DEFAULT nextval('public.posts_id_seq'::regclass);
+ALTER TABLE ONLY public.boards ALTER COLUMN id SET DEFAULT nextval('public.boards_id_seq'::regclass);
 
 
 --
@@ -89,11 +83,11 @@ ALTER TABLE ONLY public.ar_internal_metadata
 
 
 --
--- Name: posts posts_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: boards boards_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.posts
-    ADD CONSTRAINT posts_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.boards
+    ADD CONSTRAINT boards_pkey PRIMARY KEY (id);
 
 
 --
@@ -105,12 +99,22 @@ ALTER TABLE ONLY public.schema_migrations
 
 
 --
+-- Name: index_boards_on_name; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_boards_on_name ON public.boards USING btree (name);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
-('20220518205916');
+('20220518205916'),
+('20220519160659'),
+('20220519161520'),
+('20220519161915');
 
 

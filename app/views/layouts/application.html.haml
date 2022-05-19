@@ -12,8 +12,8 @@
     %meta{content: "lunaisnotaboy/awoo @ #{current_revision}", name: 'generator'}/
 
     / Set the page title and description
-    %title Awoo
-    %meta{content: 'danger/u/ - dangerous opinions. danger/u/ is a textboard based off danger/u/ from VA-11 HALL-A Cyberpunk Bartender Action.', name: 'description'}/
+    %title= page_title(@title)
+    %meta{content: page_description(@description), name: 'description'}/
 
     / Load the main stylesheet
     = stylesheet_link_tag 'application', media: 'all'

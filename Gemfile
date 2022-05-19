@@ -23,6 +23,7 @@ gem 'redis', '~> 4.6'
 gem 'sass-rails', '~> 6.0'
 gem 'sidekiq', '~> 6.4', '>= 6.4.1'
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
+gem 'terser', '~> 1.1', '>= 1.1.9'
 
 group :development, :test do
   gem 'debug', '~> 1.5', platforms: %i[mri mingw x64_mingw]

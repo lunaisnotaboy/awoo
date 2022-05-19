@@ -1,9 +1,15 @@
 # frozen_string_literal: true
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Populate the database with the default boards
+Board.create(name: 'a', desc: 'Anime & Manga')
+Board.create(name: 'burg', desc: 'Burg')
+Board.create(name: 'cyb', desc: 'Cyberpunk Life')
+Board.create(name: 'd', desc: 'Doujin')
+Board.create(name: 'lain', desc: 'Cyberpunk')
+Board.create(name: 'mu', desc: 'Music')
+Board.create(name: 'new', desc: 'News & Politics')
+Board.create(name: 'tech', desc: 'Technology')
+Board.create(name: 'test', desc: 'Awoo Testing Grounds')
+Board.create(name: 'u', desc: 'Random')
+Board.create(name: 'v', desc: 'Video Games')
+Board.create(name: 'all', desc: 'All')
